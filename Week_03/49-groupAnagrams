@@ -1,0 +1,39 @@
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+ // 方法一
+var groupAnagrams = function(strs) {
+    let strs2 = [...strs];
+    let a = new Map();
+    let returnList = [];
+    let b = 1;
+    for(let i = 0; i < strs2.length; i++){
+        let str = strs2[i].split('').sort().join('')
+        if(a.get(str)){
+            let j = a.get(str);
+            returnList[j].push(strs[i])
+        }else{
+            a.set(str, b)
+            returnList[b] = [strs[i]]
+            b++
+        }
+    }
+    returnList.shift()
+    console.log(returnList)
+    return returnList
+};
+
+
+// 方法二
+var groupAnagrams = function(strs) {
+    const map = new Object();
+    for (let s of strs) {
+        const count = new Array(26).fill(0);
+        for (let c of s) {
+            count[c.charCodeAt() - 'a'.charCodeAt()]++;
+        }
+        map[count] ? map[count].push(s) : map[count] = [s];
+    }
+    return Object.values(map);
+};
