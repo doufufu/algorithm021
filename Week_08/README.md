@@ -24,6 +24,23 @@ hash
 3. redis缓存
 4. 垃圾邮件、评论等的过滤
 
+```
+// 代码实现
+https://shimo.im/docs/UITYMj1eK88JCJTH/read
+```
+
+### LRU Cache
+##### cache缓存
+1. 记忆
+2. 钱包/储物柜
+3. 代码模块
+
+##### LRU Cache
+两个要素： 大小、替换策略
+Hash Table + Double LinkedList
+O（1）查询
+O（1）修改、更新
+
 ### 题解
 颠倒二进制位
 1. int -> string -> reverse -> int
